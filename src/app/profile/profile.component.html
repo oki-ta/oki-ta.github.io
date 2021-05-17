@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Untitle</title>
+    </head>
+    <body>
+     <mat-card>
+        <mat-card-title>
+         <article>
+            <h3>名前：okita</h3>
+         </article>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <img class="photo" mat-card-image src="https://pakutaso.cdn.rabify.me/shared/img/thumb/PAR56489.jpg.webp?d=1420" alt="Photo of a Shiba Inu">
+        </mat-card-subtitle>
+        <section>
+            <h3>プロフィール</h3>
+            <div>
+                <p>1996/09/30</p>
+                <p>福岡県出身</p>
+                <p>好きな食べ物はカレー</p>
+            </div>
+        </section>
+        <section>
+            <h3>スキル</h3>
+            <div>
+                <p>言語：TypeScript,C#,html,css</p>
+                <p>フレームワーク：Angular,.net framework</p>
+                <p>プログラマー歴：一年弱</p>
+            </div>
+        </section>
+        <button type="submit" class="btn-regist"(click)="onOpen()" mat-button>OPEN</button>
+        <h1 class="content" *ngIf="openFlg">よろしくお願いします。</h1>
+     </mat-card>
+    </body>
+</html>
+

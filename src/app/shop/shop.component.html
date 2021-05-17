@@ -1,0 +1,51 @@
+<mat-card class="card mt-24">
+  <section>
+    <h3 class="titlemes">{{ message }}</h3>
+    <div [class.is-hide]="!displaySearchConditions">
+      <div class="mt-16">
+        <mat-form-field appearance="fill">
+          <mat-label>支店名を選択ください</mat-label>
+          <mat-select
+            [(ngModel)]="query.facilityName"
+            (ngModelChange)="onFacilityNameSelected($event)"
+          >
+            <mat-option value="Facility" *ngFor="let Facility of facilitys">　
+              {{ Facility }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+       </div>
+        <mat-form-field appearance="fill">
+        <mat-label>店舗名を入力ください</mat-label>
+        <input matInput type="text"
+          class="form-common-input_text form-common-input_text-w-502 ml-8"
+          maxlength="50"
+          [(ngModel)]="query.shopNameCall"
+        />
+      </mat-form-field>
+      <div class="mt-24 d-flex">
+        <div class="ml-auto">
+          <button type="submit" class="btn-regist"
+            (click)="onSearch()" mat-button>検索</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</mat-card>
+
+<!-- 検索結果表示領域-->
+<div *ngIf="doSearching">
+  <app-data
+  [model]="ShopServiceResponse"
+  (linkClick)="detailItem($event)"
+  ></app-data>
+</div>
+
+<div *ngIf="noResult">
+  <p>検索条件を正しく入力してください</p>
+</div>
+
+<!--詳細画面-->
+<app-shop-dialog>
+</app-shop-dialog>
+

@@ -1,0 +1,15 @@
+<div id="modal" class="modal" *ngIf="isOpen">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3>【店舗詳細情報】</h3>
+        <p>{{detailMessage}}</p>
+      </div>
+      <div>
+        <button mat-button class="btn-regist"
+         (click)="close()"
+        >
+        戻る
+        </button>
+    </div>
+    </div>
+</div>

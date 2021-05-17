@@ -1,0 +1,17 @@
+<h3>【検索結果】</h3>
+    <table style="border: solid 1px #aaa;">
+    <thead>
+        <td style="border: solid 1px #aaa;">店舗ID</td><td style="border: solid 1px #aaa;">正式店舗名</td>
+    </thead>
+    <tbody>
+       <td
+        style="cursor: pointer; color: blue; border: solid 1px #aaa;"
+       >
+           <div *ngFor="let ShopIdLink of shopIdLink" (click)="onLinkClick(ShopIdLink)">{{ShopIdLink}}</div>  
+       </td>
+       <td style="border: solid 1px #aaa;">
+           <div *ngFor="let Display of display">{{Display}}</div>
+       </td>
+    </tbody> 
+</table>
+

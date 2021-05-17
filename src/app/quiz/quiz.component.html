@@ -1,0 +1,28 @@
+<mat-card class="card mt-24">
+    <section>
+        <h3 class="titlemes">【クイズ】</h3>
+        <h4>アプリ製作者の血液型は何型でしょう？</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>選択ください</mat-label>
+            <mat-select
+              [(value)]="selectedBloodType"
+              (selectionChange)="onSelected($event)"
+            >
+              <mat-option [value]="BloodType" *ngFor="let BloodType of bloodType">　
+                {{ BloodType }}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button class="btn-regist" (click)="onClick()" mat-button>解答する</button>
+        </div>
+    </section>
+</mat-card>
+
+<div *ngIf=incorrectFlg>
+    不正解！
+</div>
+
+
+
+
